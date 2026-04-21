@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FieldData Generator — NemunekoStudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">Streampet<span>/</span>FIELDGEN</div>
+    <div class="header-right">
+      <span class="badge">v2.0</span>
+      <span id="hdr-stat">0 keys</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-block">
+        <div class="section-title">Number of Animations</div>
+        <div class="count-control">
+          <div class="count-hint">Enter the total number of animations </div>
+          <div class="count-row">
+            <span class="count-label">Total Animations</span>
+            <div class="count-input-wrap">
+              <button class="count-btn" id="btn-dec">−</button>
+              <input type="number" id="animCount" value="6" min="1" max="99" />
+              <button class="count-btn" id="btn-inc">+</button>
+            </div>
+          </div>
+          <div class="info-chips" id="chips"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="section-title">Statistics</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-val" id="st-anims">0</div>
+            <div class="stat-lbl">Animations</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="st-keys">0</div>
+            <div class="stat-lbl">Total Keys</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="st-bytes">0</div>
+            <div class="stat-lbl">Size (KB)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="st-groups">0</div>
+            <div class="stat-lbl">Groups</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="gen-btn" id="gen-btn">⚡ Generate</button>
+
+    </aside>
+
+    <!-- OUTPUT PANEL -->
+    <div class="output-panel">
+      <div class="output-toolbar">
+        <div class="toolbar-left">
+          <button class="tab-btn active" id="tab-json">JSON</button>
+          <button class="tab-btn" id="tab-preview">Preview</button>
+        </div>
+        <button class="copy-btn" id="copy-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <rect x="5" y="5" width="9" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M3 11H2a1 1 0 01-1-1V2a1 1 0 011-1h8a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+          Salin
+        </button>
+        <button class="dl-btn" id="dl-btn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2v8M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Unduh
+        </button>
+        <span class="key-count" id="key-count">0 keys</span>
+      </div>
+      <pre id="output-pre"></pre>
+      <div id="preview-tab"></div>
+    </div>
+
+  </div>
+
+  <div id="toast">JSON tersalin ke clipboard!</div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

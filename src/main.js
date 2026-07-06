@@ -6,7 +6,8 @@ const ALERT_OPTS = {
   tip: "Tip",
   cheer: "Cheer",
   welcome: "Welcome",
-  "community-gifted": "Community Gifted",
+  "gifted-subs": "Gifted Subs",
+  "community-gift": "Community Gift",
   raid: "raid",
   reedem: "Item Redemption",
   superchat: "Superchat",
@@ -44,15 +45,15 @@ function buildSimulate() {
 }
 function buildAlerts() {
   return {
-    subMessage:           { type: "text", label: "Subscriber Alert Message",       value: "Thank you, {name}, for subscribing!",                                             group: "🔔 Alert Setting" },
-    folowersMessage:      { type: "text", label: "Folower Alert Message",          value: "Thank you, {name}, for following",                                                group: "🔔 Alert Setting" },
-    giftMessage:          { type: "text", label: "Gift Sub Alert Message",         value: "{sender} gifted a subscription to {name}! 🎉",                                   group: "🔔 Alert Setting" },
-    tipMessage:           { type: "text", label: "Tip Alert Message",              value: "Thank you, {name}, for your generous {amount} donation! 🎉 Message: {message}",  group: "🔔 Alert Setting" },
-    cheerMessage:         { type: "text", label: "Cheer Alert Message",            value: "Thank you, {name}, for your {amount} bits cheer! 🎉 Message: {message}",         group: "🔔 Alert Setting" },
-    communityGiftMessage: { type: "text", label: "Community Gift Alert Message",   value: "{gifterName} has gifted {giftAmount} subs to the community! Message: {message}", group: "🔔 Alert Setting" },
-    raid:                 { type: "text", label: "Raid Alert Message",             value: "{raidName} has gifted {raidAmount} subs to the community! Message: {message}",   group: "🔔 Alert Setting" },
-    redemption:           { type: "text", label: "Item Redemption Alert Message",  value: "{name} spent points to redeem {iteem} Message: {message}",                       group: "🔔 Alert Setting" },
-    welcomeMessage:       { type: "text", label: "Welcome Alert Message",          value: "Welcome to the stream, {name}! 👋😊",                                            group: "🔔 Alert Setting" },
+    subMessage:           { type: "text", label: "Subscriber Alert Message",       value: "Thank you, {name}, for subscribing!",                                            group: "🔔 Alert Setting" },
+    folowersMessage:      { type: "text", label: "Folower Alert Message",          value: "Thank you, {name}, for following",                                               group: "🔔 Alert Setting" },
+    tipMessage:           { type: "text", label: "Tip Alert Message",              value: "Thank you, {name}, for your generous {amount} donation! 🎉 Message: {message}", group: "🔔 Alert Setting" },
+    cheerMessage:         { type: "text", label: "Cheer Alert Message",            value: "Thank you, {name}, for your {amount} bits cheer! 🎉 Message: {message}",        group: "🔔 Alert Setting" },
+    giftedSubsMessage:    { type: "text", label: "Gifted Subs Alert Message",      value: "{gifterName} gifted a sub to {name}!",                                          group: "🔔 Alert Setting" },
+    communityGiftMessage: { type: "text", label: "Community Gift Alert Message",   value: "{gifterName} gifted {giftAmount} subs to the community! 🎁",                    group: "🔔 Alert Setting" },
+    raid:                 { type: "text", label: "Raid Alert Message",             value: "{raidName} has gifted {raidAmount} subs to the community! Message: {message}",  group: "🔔 Alert Setting" },
+    redemption:           { type: "text", label: "Item Redemption Alert Message",  value: "{name} spent points to redeem {iteem} Message: {message}",                      group: "🔔 Alert Setting" },
+    welcomeMessage:       { type: "text", label: "Welcome Alert Message",          value: "Welcome to the stream, {name}! 👋😊",                                           group: "🔔 Alert Setting" },
   };
 }
 
@@ -73,8 +74,6 @@ function buildAnim(n) {
     [`volumeSlider${n}`]:        { type: "input",       label: "Sound Volume", value: 50, min: 0, max: 100, steps: 1, group },
   };
 }
-
-
 
 function buildYTAlerts() {
   return {
